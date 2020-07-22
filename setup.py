@@ -24,16 +24,13 @@ setup(
     author_email = "FIXME",
     url = "https://github.com/pydicom/pydicom-data",
     license = "MIT",
-    keywords = (
-        "dicom python medicalimaging radiotherapy oncology pydicom imaging"
-    ),
+    keywords = "dicom python pydicom",
     classifiers = [
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
         "Intended Audience :: Healthcare Industry",
         "Intended Audience :: Science/Research",
-        "Development Status :: 4 - Beta",
-        #"Development Status :: 5 - Production/Stable",
+        "Development Status :: 5 - Production/Stable",
         "Natural Language :: English",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
@@ -45,6 +42,6 @@ setup(
     ],
     install_requires=[],
     entry_points={
-        "pydicom.data.external_sources": "datasets = datasets:get_interface",
+        "pydicom.data.external_sources": "pydicom-data = datasets:Interface",
     },
 )

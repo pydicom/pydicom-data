@@ -13,29 +13,17 @@ class DataTypes(IntEnum):
     DICOMDIR = 3
     JPEG = 4
 
-    @classmethod
-    def add(cls, name: str, code: int):
-        """Add a new constant to `DataTypes`.
 
-        Parameters
-        ----------
-        name : str
-            The name of the constant to add.
-        code : int
-            The status code corresponding to the name.
-        """
-        setattr(cls, name, code)
-
-
-def get_interface() -> "Interface":
-    return Interface()
-
-
-# TODO: possibly not needed
 class Interface:
-    """"""
+    """Interface to pydicom-data.
+
+    Attributes
+    ----------
+    data_path : str
+        The absolute path to the data directory.
+    """
     def __init__(self) -> None:
-        """"""
+        """Initialise a new Interface."""
         lib_dir = os.path.dirname(os.path.realpath(__file__))
         self.data_path = os.path.abspath(os.path.join(lib_dir, '../', 'data'))
 
@@ -69,15 +57,13 @@ class Interface:
 
         raise ValueError(f"No file found named '{name}'")
 
-    def get_paths(
-        self, pattern: str = "*", dtype: int = DataTypes.DATASET
-    ) -> List[str]:
+    def get_paths(self, pattern: str, dtype: int = DataTypes.DATASET) -> List[str]:
         """Return a list of absolute paths for files matching `pattern`.
 
         Parameters
         ----------
-        pattern : str, optional
-            A string pattern to filter the files (default ``*``).
+        pattern : str
+            A string pattern to filter the files.
         dtype : int, optional
             The type of data to search for, default ``0`` (DICOM dataset).
 
@@ -89,9 +75,6 @@ class Interface:
         """
         if dtype != DataTypes.DATASET:
             return []
-
-        # if the user forgot to add them
-        pattern = "*" + pattern + "*"
 
         out = []
         for root, _, fnames in os.walk(self.data_path):
