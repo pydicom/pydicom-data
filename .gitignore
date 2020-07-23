@@ -21,7 +21,7 @@
 # Build/dist files
 dist/*
 build/*
-pydicom.egg-info/*
+pydicom-data.egg-info/*
 distribute*.egg
 distribute*.tar.gz
 py3source
@@ -47,7 +47,19 @@ doc/reference/generated/*
 tests/test_pixel.py
 
 # mypy
-pydicom/.mypy_cache/*
+pydicom-data/.mypy_cache/*
 
 # vscode
 .vscode/*
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+.pytest_cache
