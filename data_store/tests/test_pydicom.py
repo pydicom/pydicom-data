@@ -1,6 +1,7 @@
 """Tests for the interface with pydicom."""
 
 import os
+from pathlib import Path
 
 import pytest
 
@@ -11,9 +12,7 @@ class TestPydicom:
     """Test the interface with pydicom works correctly."""
     def setup(self):
         cur_dir = os.path.dirname(os.path.realpath(__file__))
-        self.data_path = os.path.abspath(
-            os.path.join(cur_dir, "../", "../", "data")
-        )
+        self.data_path = Path(cur_dir).joinpath("..", "..", "data").resolve()
 
     def test_pydicom_local(self):
         """Test that pydicom gets its own test data."""

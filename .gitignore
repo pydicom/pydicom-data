@@ -2,6 +2,9 @@
 
 # Backup files
 *~
+__pycache__/
+*.py[cod]
+*$py.class
 
 # Lock files used by the Emacs editor.
 .\#*
