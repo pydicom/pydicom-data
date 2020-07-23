@@ -4,7 +4,7 @@ import sys
 
 # Version
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
-VERSION_FILE = os.path.join(BASE_DIR, 'datasets', '_version.py')
+VERSION_FILE = os.path.join(BASE_DIR, 'data_store', '_version.py')
 with open(VERSION_FILE) as fp:
     exec(fp.read())
 
