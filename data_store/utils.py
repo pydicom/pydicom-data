@@ -24,8 +24,7 @@ class DataStore:
     """
     def __init__(self) -> None:
         """Initialise a new Interface."""
-        lib_dir = os.path.dirname(os.path.realpath(__file__))
-        self.data_path = Path(lib_dir, '../', 'data').resolve()
+        self.data_path = Path(__file__).resolve().parent.parent / "data"
 
     def get_path(self, name: str, dtype: int = DataTypes.DATASET) -> str:
         """Return the absolute path to the first file with filename `name`

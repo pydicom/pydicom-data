@@ -11,8 +11,7 @@ from data_store import DataStore
 class TestDataStore:
     """Test the interface for the data sources"""
     def setup(self):
-        cur_dir = os.path.dirname(os.path.realpath(__file__))
-        self.data_path = Path(cur_dir).joinpath("..", "..", "data").resolve()
+        self.data_path = Path(__file__).resolve().parent.parent.parent / "data"
         self.fname = "693_UNCI.dcm"
 
     def test_data_path(self):
@@ -25,9 +24,7 @@ class TestDataStore:
         s = DataStore()
         result = s.get_path(self.fname)
         assert isinstance(result, str)
-        assert (
-            os.path.join(self.data_path, self.fname) == result
-        )
+        assert os.fspath(self.data_path / self.fname) == result
 
         with pytest.raises(ValueError, match=r"No file found named"):
             s.get_path("693_UNCI")

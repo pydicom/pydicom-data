@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
-import os
+from pathlib import Path
 import sys
 
 # Version
-BASE_DIR = os.path.dirname(os.path.realpath(__file__))
-VERSION_FILE = os.path.join(BASE_DIR, 'data_store', '_version.py')
+BASE_DIR = Path(__file__).resolve().parent
+VERSION_FILE = BASE_DIR.joinpath('data_store', '_version.py')
 with open(VERSION_FILE) as fp:
     exec(fp.read())
 
