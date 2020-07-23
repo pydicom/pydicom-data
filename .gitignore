@@ -24,11 +24,26 @@ __pycache__/
 # Build/dist files
 dist/*
 build/*
-pydicom-data.egg-info/*
-distribute*.egg
 distribute*.tar.gz
 py3source
 .tox/*
+
+# Distribution / packaging
+.Python
+env/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Docs build
 docs/_build/*
