@@ -5,9 +5,14 @@ from pathlib import Path
 
 import pytest
 
-from pydicom.data import get_testdata_file
+try:
+    from pydicom.data import get_testdata_file
+    HAVE_PYDICOM = True
+except ImportError:
+    HAVE_PYDICOM = False
 
 
+@pytest.mark.skipif(not HAVE_PYDICOM, reason="pydicom not installed")
 class TestPydicom:
     """Test the interface with pydicom works correctly."""
     def setup(self):
