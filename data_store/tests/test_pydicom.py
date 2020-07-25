@@ -23,6 +23,7 @@ class TestPydicom:
         fname = "CT_small.dcm"
         assert "pydicom/data/test_files" in get_testdata_file(fname)
 
+    @pytest.mark.xfail
     def test_pydicom_external(self):
         """Test that pydicom uses external data sources first."""
         fname = "693_UNCI.dcm"
