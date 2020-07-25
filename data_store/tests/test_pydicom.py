@@ -9,7 +9,7 @@ try:
     import pydicom.data
     from pydicom.data import get_testdata_file
     HAVE_PYDICOM = True
-    HAVE_EXT_SOURCES = hasattr(pydicom.data.EXTERNAL_DATA_SOURCES)
+    HAVE_EXT_SOURCES = hasattr(pydicom.data, "EXTERNAL_DATA_SOURCES")
 except ImportError:
     HAVE_PYDICOM = False
     HAVE_EXT_SOURCES = False
