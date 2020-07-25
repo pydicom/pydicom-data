@@ -40,6 +40,7 @@ setup(
         "Topic :: Software Development :: Libraries",
     ],
     install_requires=[],
+    tests_require=["pytest"],
     entry_points={
         "pydicom.data.external_sources": "pydicom-data = data_store:DataStore",
     },

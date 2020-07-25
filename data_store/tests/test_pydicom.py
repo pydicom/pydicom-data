@@ -16,7 +16,7 @@ except ImportError:
 class TestPydicom:
     """Test the interface with pydicom works correctly."""
     def setup(self):
-        self.data_path = Path(__file__).resolve().parent.parent.parent / "data"
+        self.data_path = Path(__file__).resolve().parent.parent / "data"
 
     def test_pydicom_local(self):
         """Test that pydicom gets its own test data."""
