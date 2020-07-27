@@ -11,7 +11,7 @@ from data_store import DataStore
 class TestDataStore:
     """Test the interface for the data sources"""
     def setup(self):
-        self.data_path = Path(__file__).resolve().parent.parent.parent / "data"
+        self.data_path = Path(__file__).resolve().parent.parent / "data"
         self.fname = "693_UNCI.dcm"
 
     def test_data_path(self):
