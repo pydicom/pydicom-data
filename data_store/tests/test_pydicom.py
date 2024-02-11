@@ -18,7 +18,7 @@ except ImportError:
 @pytest.mark.skipif(not HAVE_PYDICOM, reason="pydicom not installed")
 class TestPydicom:
     """Test the interface with pydicom works correctly."""
-    def setup(self):
+    def setup_method(self):
         self.data_path = Path(__file__).resolve().parent.parent / "data"
 
     def test_pydicom_local(self):
