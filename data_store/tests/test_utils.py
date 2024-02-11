@@ -10,7 +10,7 @@ from data_store import DataStore
 
 class TestDataStore:
     """Test the interface for the data sources"""
-    def setup(self):
+    def setup_method(self):
         self.data_path = Path(__file__).resolve().parent.parent / "data"
         self.fname = "693_UNCI.dcm"
 
